@@ -26,11 +26,7 @@ export class ObjectSchemaParser extends MonoSchemaParser {
     const { properties, additionalProperties } = schema || {};
 
     const propertiesContent = lodash.map(properties, (property, name) => {
-      const required = this.schemaUtils.isPropertyRequired(
-        name,
-        property,
-        schema,
-      );
+      const required = true;
       const rawTypeData = lodash.get(
         this.schemaUtils.getSchemaRefType(property),
         "rawTypeData",
